@@ -82,19 +82,7 @@ public class HomeFragment extends BaseRlvFragment {
 
     @Override
     protected void initValues() {
-        // TODO: 2018/7/20/020 测试数据
-//        miningBeanList = new ArrayList<>();
-//        currentList = new ArrayList<>();
-//        for(int i=0;i<60;i++){
-//            miningBeanList.add(new MiningBean(i,"2018-7-20 15:00:"+i));
-//        }
-//        if(miningBeanList.size()<15){
-//            currentList = miningBeanList;
-//        }else{
-//            currentList = miningBeanList.subList(0,15);
-//        }
-//        mAdapter.replaceAll(currentList);
-//        tvMoney.setText("93.10");
+        pageNum = 1 ;
         currentList = new ArrayList<>();
         miningBeanList = new ArrayList<>();
         getData(pageNum, PAGE_SIZE, TYPE_FIRST);
@@ -124,9 +112,11 @@ public class HomeFragment extends BaseRlvFragment {
                             if (miningBeanList.size() == 0) {
                                 miningBeanList = currentList;
                                 mAdapter.replaceAll(miningBeanList);
-                            } else if (type == TYPE_LOAD && currentList.get(currentList.size() - 1).getId().equals(miningBeanList.get(miningBeanList.size() - 1).getId())) {
+                            } else if ( currentList.get(currentList.size() - 1).getId().equals(miningBeanList.get(miningBeanList.size() - 1).getId())) {
                                 // TODO: 2018/7/24/024 后台错误，页数不同，获取的数据相同
-                                mRecyclerView.setNoMore(true);
+                                if( type == TYPE_LOAD){
+                                    mRecyclerView.setNoMore(true);
+                                }
                             } else {
                                 //添加数据
                                 miningBeanList.addAll(currentList);
@@ -193,18 +183,6 @@ public class HomeFragment extends BaseRlvFragment {
     protected void loadMoreData() {
         pageNum++;
         getData(pageNum, PAGE_SIZE, TYPE_LOAD);
-
-//        if(miningBeanList.size()-currentList.size() > 15){
-//            currentList = miningBeanList.subList(0,currentList.size()+15);
-//            onLoadFinish(false);
-//        }else if(miningBeanList.size() == currentList.size()){
-//            mRecyclerView.setNoMore(true);
-//        }else{
-//            currentList = miningBeanList;
-//            onLoadFinish(false);
-//        }
-//        mAdapter.replaceAll(currentList);
-
     }
 
 

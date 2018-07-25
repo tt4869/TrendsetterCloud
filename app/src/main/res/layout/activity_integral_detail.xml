@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,10 +8,11 @@
     android:orientation="vertical">
 
     <include
-        android:id="@+id/include"
+        android:id="@+id/ll_header"
         layout="@layout/layout_header" />
 
     <TextView
+        android:layout_below="@+id/ll_header"
         android:id="@+id/tv_record"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,17 +20,42 @@
         android:text="积分明细"
         android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@+id/include" />
+    />
 
 
     <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:layout_below="@id/tv_record"
         android:id="@+id/integral_detail_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_record" />
+        android:layout_marginBottom="20dp" />
 
 
-</LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        >
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/nodata"
+            />
+
+        <TextView
+            android:id="@+id/tv_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:text="暂无挖矿记录,点击刷新"
+            />
+    </LinearLayout>
+
+
+</RelativeLayout>

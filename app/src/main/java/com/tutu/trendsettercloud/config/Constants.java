@@ -10,4 +10,6 @@ public class Constants {
     public final static String CONFIG_NAME = "config";
     public final static String CONFIG_USERINFO = "userInfo";
 
+    public final static int TAG_GET_MILL = 1 ;
+
 }

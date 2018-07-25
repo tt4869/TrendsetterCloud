@@ -15,7 +15,8 @@
         android:background="@color/blue"
         android:textSize="16sp"
         android:textColor="@color/white"
-        android:text="ID:QWENMQRKQLFKFNFNJKFNADJKFNAJFNAKLFNONFNNFJNFNFJNFJNFNFFAWEJFNWFNAWEFNABFEUBFIAUBFI"
+        android:padding="10dp"
+        android:text="ID:test"
         />
 
     <TextView
@@ -24,7 +25,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textSize="16sp"
-        android:text="IP:192.168.0.158"
+        android:text="IP:192.168.0.0"
         />
 
 

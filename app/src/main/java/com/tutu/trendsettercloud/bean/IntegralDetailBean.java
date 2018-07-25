@@ -4,37 +4,67 @@ import java.io.Serializable;
 
 public class IntegralDetailBean implements Serializable {
     private static final long serialVersionUID = 6565251095436565248L;
-    private String kind;
-    private int amount;
-    private String date;
+    private String id;
+    private String userId;
+    private int integral;
+    private String remark;
+    private String createDatetime;
+    private String lastUpdateDatetime;
 
-    public IntegralDetailBean(String kind, int amount, String date) {
-        this.kind = kind;
-        this.amount = amount;
-        this.date = date;
+    public String getId() {
+        return id;
     }
 
-    public String getKind() {
-        return kind;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public void setKind(String kind) {
-        this.kind = kind;
+    public String getUserId() {
+        return userId;
     }
 
-    public int getAmount() {
-        return amount;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public int getIntegral() {
+        return integral;
     }
 
-    public String getDate() {
-        return date;
+    public void setIntegral(int integral) {
+        this.integral = integral;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public String getRemark() {
+        return remark;
     }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public String getCreateDatetime() {
+        return createDatetime;
+    }
+
+    public void setCreateDatetime(String createDatetime) {
+        this.createDatetime = createDatetime;
+    }
+
+    public String getLastUpdateDatetime() {
+        return lastUpdateDatetime;
+    }
+
+    public void setLastUpdateDatetime(String lastUpdateDatetime) {
+        this.lastUpdateDatetime = lastUpdateDatetime;
+    }
+
+ /*
+    	"id": "1",
+		"userId": "14",
+		"integral": 1,
+		"remark": "推荐奖励",
+		"createDatetime": "2018-07-03 16:34:27",
+		"lastUpdateDatetime": "2018-07-03 16:34:32"
+     */
 }

@@ -1,5 +1,6 @@
 package com.tutu.trendsettercloud.utils.okgo;
 
+import com.google.gson.stream.JsonReader;
 import com.lzy.okgo.callback.AbsCallback;
 import com.lzy.okgo.model.HttpParams;
 import com.lzy.okgo.request.base.Request;
@@ -41,7 +42,7 @@ public abstract class JsonCallback<T> extends AbsCallback<T> {
         Type genType = getClass().getGenericSuperclass();
         Type[] params = ((ParameterizedType) genType).getActualTypeArguments();
         Type type = params[0];
-        // JsonReader jsonReader = new JsonReader(response.body().charStream());
+       // JsonReader jsonReader = new JsonReader(response.body().charStream());
         boolean isSimpleResponse = type.toString().equals(SimpleResponse.class.toString());
         if (!(type instanceof ParameterizedType) && !isSimpleResponse)
             throw new IllegalStateException("没有填写泛型参数");

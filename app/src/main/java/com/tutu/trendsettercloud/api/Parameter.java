@@ -13,5 +13,7 @@ public class Parameter {
 
     public static String PAGENUM = "pageNum";
     public static String PAGESIZE = "pageSize";
+    public static String USERID = "userId";
+    public static String PAGE = "page";
 
 }

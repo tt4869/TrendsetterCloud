@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.tutu.trendsettercloud.R;
 import com.tutu.trendsettercloud.base.BaseFragment;
+import com.tutu.trendsettercloud.bean.UserInfoBean;
 import com.tutu.trendsettercloud.config.Constants;
 import com.tutu.trendsettercloud.config.MyConfig;
 import com.tutu.trendsettercloud.ui.activity.IntegralDetailActivity;
@@ -31,14 +32,14 @@ public class MineFragment extends BaseFragment {
     TextView tvUsername;
     @BindView(R.id.tv_user_phone)
     TextView tvUserPhone;
-    @BindView(R.id.integral)
-    TextView integral;
+    @BindView(R.id.tv_integral)
+    TextView tvIntegral;
     @BindView(R.id.tv_money)
     TextView tvMoney;
     @BindView(R.id.ll_header)
     LinearLayout llHeader;
-    @BindView(R.id.rl_integral_detail)
-    RelativeLayout rlIntegralDetail;
+    @BindView(R.id.ll_integral_detail)
+    LinearLayout llIntegralDetail;
     @BindView(R.id.rl_contacts)
     RelativeLayout rlContacts;
     @BindView(R.id.rl_exit)
@@ -64,7 +65,11 @@ public class MineFragment extends BaseFragment {
 
     @Override
     protected void initUI() {
-
+        UserInfoBean userInfoBean = MyConfig.getUserInfo(mContext);
+        tvUsername.setText(userInfoBean.getNickName());
+        tvUserPhone.setText(userInfoBean.getPhone());
+        tvIntegral.setText(""+userInfoBean.getIntegral());
+        tvMoney.setText(userInfoBean.getEthCurrency());
     }
 
     @Override
@@ -77,10 +82,10 @@ public class MineFragment extends BaseFragment {
         return R.layout.fragment_mine;
     }
 
-    @OnClick({R.id.rl_integral_detail, R.id.rl_contacts, R.id.rl_exit})
+    @OnClick({R.id.ll_integral_detail, R.id.rl_contacts, R.id.rl_exit})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.rl_integral_detail:
+            case R.id.ll_integral_detail:
                 startActivity(new Intent(getActivity(), IntegralDetailActivity.class));
                 break;
             case R.id.rl_contacts:

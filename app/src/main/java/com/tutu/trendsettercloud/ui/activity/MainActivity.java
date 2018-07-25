@@ -77,6 +77,8 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
         bottomNavigationView.setSelectedItemId(R.id.item_1);
 
         pagerAdapter = new BottomnavigationViewPagerAdapter(getSupportFragmentManager(),fragments);
+        //全部缓存
+        viewpager.setOffscreenPageLimit(3);
         viewpager.setAdapter(pagerAdapter);
         viewpager.addOnPageChangeListener(this);
 

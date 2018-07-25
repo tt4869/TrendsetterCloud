@@ -109,6 +109,15 @@ public class UrlConstants {
 
 
     /**
+     * 获取积分列表
+     * userId
+     * page
+     * pageSize
+     */
+    public static final String GET_INTEGRAL_URL = HOST + "integralRecord/getGridByUser";
+
+
+    /**
      * 添加需要备份的矿机信息
      *    machineId	矿机id
      *    fileHash	文件哈希值
@@ -139,11 +148,12 @@ public class UrlConstants {
     public static final String GET_CODE_URL = HOST + "msg/sendMsg";
 
 
+    /**
+     * 获取矿机信息
+     *     http://ip:5001/api/v0/id    Method:GET
+     */
 
 
 
 
-
-
-
-    }
+}
