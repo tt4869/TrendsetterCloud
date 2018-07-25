@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_header"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/split_line_1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey" />
+
+        <RelativeLayout
+            android:id="@+id/rl_phone"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_below="@+id/split_line_1"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="20dp">
+
+            <TextView
+                android:id="@+id/tv_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="手机 :   "
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/tv_phone"
+                android:background="@null"
+                android:padding="10dp"
+                android:text="13000000000"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="已验证"
+                android:textColor="@color/grey"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+
+        <View
+            android:id="@+id/split_line_2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/rl_phone"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:background="@color/grey" />
+
+
+        <RelativeLayout
+            android:id="@+id/rl_password"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_below="@+id/split_line_2"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="20dp">
+
+            <TextView
+                android:id="@+id/tv_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="密码 :   "
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/tv_password"
+                android:background="@null"
+                android:inputType="textVisiblePassword"
+                android:maxLength="16"
+                android:hint="请输入密码"
+                android:padding="10dp"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/split_line_3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/rl_password"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:background="@color/grey" />
+
+        <RelativeLayout
+            android:id="@+id/rl_nickname"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_below="@+id/split_line_3"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="20dp">
+
+            <TextView
+                android:id="@+id/tv_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="昵称 :   "
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/et_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/tv_nickname"
+                android:background="@null"
+                android:inputType="text"
+                android:maxLength="8"
+                android:hint="用于好友添加显示姓名"
+                android:padding="10dp"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+
+        <View
+            android:id="@+id/split_line_4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/rl_nickname"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:background="@color/grey" />
+
+        <RelativeLayout
+            android:id="@+id/rl_referrer"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_below="@+id/split_line_4"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="20dp">
+
+            <TextView
+                android:id="@+id/tv_referrer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="推荐人 :   "
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/et_referrer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/tv_referrer"
+                android:background="@null"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:hint="推荐人手机号码（选填）"
+                android:padding="10dp"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/split_line_5"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/rl_referrer"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:background="@color/grey" />
+
+        <TextView
+            android:id="@+id/tv_password_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_below="@id/split_line_5"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:gravity="left|center_vertical"
+            android:text="密码设置规则：26个字母和10个数字，字母区分大小写，密码必须为字母和数字的组合"
+            android:textColor="@color/grey"
+            android:textSize="14sp" />
+
+        <View
+            android:id="@+id/split_line_6"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/tv_password_hint"
+            android:background="@color/grey" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rl_top"
+        android:background="@color/white"
+        >
+
+        <Button
+            android:id="@+id/btn_complete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_orange_corner"
+            android:text="完成"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>
